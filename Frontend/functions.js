@@ -28,7 +28,7 @@ pages.loaderFunction = () => {
 
 
     const btn = document.getElementById('btn')
-    const lbtn = document.getElementById('lbtn')
+    const sbtn = document.getElementById('sbtn')
     btn.addEventListener('click', async function() {
     const username = document.getElementById('username')
     const password = document.getElementById('password')
@@ -44,7 +44,20 @@ pages.loaderFunction = () => {
       location.assign('./index.html')
     }
   })
+sbtn.addEventListener("click",async function(){
+    const username = document.getElementById('new_username')
+  const password = document.getElementById('new_password')
+  const email = document.getElementById('new_email')
 
+  const url = base_url + "post_signup_info.php"
+  const formData = new FormData();
+  formData.append('username', username);
+  formData.append('email', email);
+  formData.append('password', password);
+  const resp = await pages.postAPI(url, formData)
+
+}
+)
 }
 
 

@@ -19,7 +19,33 @@
 
 })();
 
+// login sign in
+const pages = {}
 
+const base_url = "http://127.0.0.1:8000"
+pages.loaderFunction = () => {
+  
+
+
+    const btn = document.getElementById('btn')
+    const lbtn = document.getElementById('lbtn')
+    btn.addEventListener('click', async function() {
+    const username = document.getElementById('username')
+    const password = document.getElementById('password')
+    
+    const name = username.value //getting the value from the input
+    const pass = password.value
+    const url = base_url + "get_login_info.php?username=" + name + "&password=" + pass
+    const resp = await pages.getAPI(url)
+    const message = document.getElementById('title')
+    if(resp.data[0] == null) {
+      message.innerHTML = "<i><h6 style = \"color: red;\"> Incorrect Username or Password</h6></i>"
+    } else {
+      location.assign('./index.html')
+    }
+  })
+
+}
 
 
   

@@ -13,7 +13,7 @@
         let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
         let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
         let x = `${_depth3}, ${_depth2}, ${_depth1}`;
-        console.log(x);
+        
         elem.style.backgroundPosition = x;
     }
 
@@ -26,7 +26,6 @@ const base_url = "http://127.0.0.1:8000"
 pages.loaderFunction = () => {
   
 
-
     const btn = document.getElementById('btn')
     const sbtn = document.getElementById('sbtn')
     btn.addEventListener('click', async function() {
@@ -35,6 +34,7 @@ pages.loaderFunction = () => {
     
     const name = username.value //getting the value from the input
     const pass = password.value
+    console.log(name)
     const url = base_url + "get_login_info.php?username=" + name + "&password=" + pass
     const resp = await pages.getAPI(url)
     const message = document.getElementById('title')
@@ -81,6 +81,7 @@ pages.postAPI = async (url, data, token = null) => {
       console.log("Error: ", error)
     }
   }
+ 
 
 
   

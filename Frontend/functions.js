@@ -59,6 +59,28 @@ sbtn.addEventListener("click",async function(){
 }
 )
 }
+pages.postAPI = async (url, data, token = null) => {
+    try{
+        return await axios.post( 
+            url,  
+            data, //data is a JSON object that we send to the server
+            {
+                headers:{ // required to check if the user is authenticated.
+                    'Authorization' : "token" + token
+                }
+            }
+        )
+    }catch(error){
+        console.log("Error from linking (POST)", error)
+    }
+  }
+  pages.getAPI = async (url) => {
+    try {
+      return await axios(url)
+    } catch (error) {
+      console.log("Error: ", error)
+    }
+  }
 
 
   

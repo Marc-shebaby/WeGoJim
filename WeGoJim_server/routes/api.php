@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,20 +17,15 @@ use App\Http\Controllers\User\UserController;
 /*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 
-  
-})*/
-// Route::group(["prefix" => "v0.1"], function(){
-//     //authenticated apis
-//     Route::group(["middleware" => "admin.auth"], function(){
-//         Route::group(["prefix" => "user"], function(){
-//             Route::post("signin", [UserController::class, "sign"]);
-//             Route::get("login",[UserController::class,"login"]);
-//         })
+*/
 
-//         })
-//     })
-
-Route::group(["prefix" => "user"], function(){
-    Route::post("signin", [UserController::class, "sign"]);
-    Route::get("login",[UserController::class,"login"]);
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/refresh', [AuthController::class, 'refresh']);
+    Route::get('/user-profile', [AuthController::class, 'userProfile']);    
 });

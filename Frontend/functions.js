@@ -29,21 +29,13 @@ pages.loaderFunction = () => {
     const btn = document.getElementById('btn')
     const sbtn = document.getElementById('sbtn')
     btn.addEventListener('click', async function() {
-    const username = document.getElementById('username')
-    const password = document.getElementById('password')
-    if(username.value==0 || password.value==0){
-      
-      window.location.href="./index.html";  
-    }
-    else{
-     
-    location.assign('./index.html')
-    }
+      form.addEventListener("submit",async function(event){
+        event.preventDefault()
+    const username = document.getElementById('username').value
+    const password = document.getElementById('password').value
+  
     
-    const name = username.value //getting the value from the input
-    const pass = password.value
-    
-    const url = base_url + "" + name + "&password=" + pass
+    const url = base_url + "/api/login"
     const resp = await pages.getAPI(url)
     const message = document.getElementById('title')
     if(resp.data[0] == null) {
@@ -51,7 +43,8 @@ pages.loaderFunction = () => {
     } else {
       location.assign('./index.html')
     }
-  }) 
+  })
+}) 
 sbtn.addEventListener("click", function(){
   form.addEventListener("submit",async function(event){
     event.preventDefault()
@@ -62,7 +55,7 @@ const username = document.getElementById('new_username')
   
   
 
-  const url = base_url + "post_signup_info.php"
+  const url = base_url + "/api/register"
   const formData = new FormData();
   formData.append('username', username);
   formData.append('email', email);

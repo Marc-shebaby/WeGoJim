@@ -28,7 +28,7 @@ pages.loaderFunction = () => {
 
     const btn = document.getElementById('btn')
     const sbtn = document.getElementById('sbtn')
-    btn.addEventListener('click', async function() {
+    btn.addEventListener('click',  function() {
       form.addEventListener("submit",async function(event){
         event.preventDefault()
     const username = document.getElementById('username').value
@@ -36,7 +36,7 @@ pages.loaderFunction = () => {
   
     
     const url = base_url + "/api/auth/login"
-    const resp = await pages.getAPI(url)
+    const resp = await pages.postAPI(url)
     const message = document.getElementById('title')
     if(resp.data[0] == null) {
       message.innerHTML = "<i><h6 style = \"color: red;\"> Incorrect Username or Password</h6></i>"
@@ -61,34 +61,30 @@ const username = document.getElementById('new_username')
   formData.append('email', email);
   formData.append('password', password);
   const resp = await pages.postAPI(url, formData)
-  window.location.href="./index.html"
+
  
 
 })
 })
 }
-pages.postAPI = async (url, data, token = null) => {
-    try{
-        return await axios.post( 
-            url,  
-            data, //data is a JSON object that we send to the server
+  pages.postAPI = async(url, api_data, api_token = null) => {  
+    try {
+        return await axios.post(
+            api_url, 
+            api_data,
             {
-                headers:{ // required to check if the user is authenticated.
-                    'Authorization' : "token" + token
+                headers:{
+                    'Authorization': "token" + api_token
                 }
             }
         )
-    }catch(error){
-        console.log("Error from linking (POST)", error)
-    }
-  }
-  pages.getAPI = async (url) => {
-    try {
-      return await axios(url)
     } catch (error) {
-      console.log("Error: ", error)
+        console.log("Error from linking (POST)", error);
     }
+    
   }
+
+
 
   const form = document.getElementById("myForm")
 

@@ -52,19 +52,15 @@ pages.loaderFunction = () => {
       location.assign('./index.html')
     }
   }) 
-sbtn.addEventListener("click",async function(){
- 
-    const username = document.getElementById('new_username')
+sbtn.addEventListener("click", function(){
+  form.addEventListener("submit",async function(event){
+    event.preventDefault()
+const username = document.getElementById('new_username')
   const password = document.getElementById('new_password')
   const email = document.getElementById('new_email')
-  
-if(username.value.length==0 || password.value.length==0 || email.value.length==0){
 
-}
-
-else {
   
-  window.location.href="./index.html"
+  
 
   const url = base_url + "post_signup_info.php"
   const formData = new FormData();
@@ -72,11 +68,11 @@ else {
   formData.append('email', email);
   formData.append('password', password);
   const resp = await pages.postAPI(url, formData)
+  window.location.href="./Profile.html"
  
 
-}
-}
-)
+})
+})
 }
 pages.postAPI = async (url, data, token = null) => {
     try{
@@ -101,7 +97,7 @@ pages.postAPI = async (url, data, token = null) => {
     }
   }
 
-
+  const form = document.getElementById("myForm")
 
   
   

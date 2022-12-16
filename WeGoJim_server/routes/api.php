@@ -19,13 +19,18 @@ use App\Http\Controllers\User\UserController;
 
   
 })*/
-Route::group(["prefix" => "v0.1"], function(){
-    //authenticated apis
-    Route::group(["middleware" => "admin.auth"], function(){
-        Route::group(["prefix" => "user"], function(){
-            Route::post("signin", [UserController::class, "sign"]);
-            Route::get("login",[UserController::class,"login"]);
-        })
+// Route::group(["prefix" => "v0.1"], function(){
+//     //authenticated apis
+//     Route::group(["middleware" => "admin.auth"], function(){
+//         Route::group(["prefix" => "user"], function(){
+//             Route::post("signin", [UserController::class, "sign"]);
+//             Route::get("login",[UserController::class,"login"]);
+//         })
 
-        })
-    })
+//         })
+//     })
+
+Route::group(["prefix" => "user"], function(){
+    Route::post("signin", [UserController::class, "sign"]);
+    Route::get("login",[UserController::class,"login"]);
+});

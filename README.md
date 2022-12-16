@@ -1,7 +1,7 @@
 # WeGoJim
- 
+ Join your gym community by signing up. Dont miss the fun with your daily workouts!  
 # Gym Community  
-- An platform that connects gym users together.  
+- A platform that connects gym users together.  
 - Share your daily workouts and stay updated with your gym buddies.  
 - Amazing experience.  
 # Images  

@@ -35,7 +35,7 @@ pages.loaderFunction = () => {
     const password = document.getElementById('password').value
   
     
-    const url = base_url + "/api/login"
+    const url = base_url + "/api/auth/login"
     const resp = await pages.getAPI(url)
     const message = document.getElementById('title')
     if(resp.data[0] == null) {
@@ -55,7 +55,7 @@ const username = document.getElementById('new_username')
   
   
 
-  const url = base_url + "/api/register"
+  const url = base_url + "/api/auth/register"
   const formData = new FormData();
   formData.append('username', username);
   formData.append('email', email);

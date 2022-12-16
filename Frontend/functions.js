@@ -61,7 +61,7 @@ const username = document.getElementById('new_username')
   formData.append('email', email);
   formData.append('password', password);
   const resp = await pages.postAPI(url, formData)
-  window.location.href="./Profile.html"
+  window.location.href="./index.html"
  
 
 })

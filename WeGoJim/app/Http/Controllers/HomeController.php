@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Validator;
 use App\Models\Post;
+
 class HomeController extends Controller
 {
  
@@ -20,8 +21,7 @@ class HomeController extends Controller
                 
                     $new_post->user_id = $id;
                     if($new_post->save()){
-                        $user = User::where("id", "=", $id)->get();
-                        $user[0]->score+=1;
+                        User::find($id)->increment('score');
                         return response()->json([
                             "status" => "Post Added"
                         ]);
@@ -39,6 +39,24 @@ class HomeController extends Controller
             ->get();
             return response()->json(["posts"=>$posts,]);
         }
+        function get_to_delete_post( $id,$img_src){
+            User::find($id)->decrement('score');
+          
+          
+            $to_del=Post::where('user_id',$id)
+            ->where('img_src',$img_src)
+            -> delete();
+        
+            return response()->json(["posts"=>$to_del,]);
+       
+        }
+        function get_top(){
+            $user = User::orderBy("score", "desc")
+            ->limit(5)
+            ->get();
+
+        return response()->json(["users"=>$user]);
+        }
 
 
-}
+};

@@ -25,6 +25,10 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 
+<<<<<<< HEAD
+<<<<<<<< HEAD:Frontend/styles/style.css
+=======
+>>>>>>> main
 .text-input {
   position: relative;
   margin-top: 50px;
@@ -69,6 +73,12 @@
 #custom-button:hover {
   background-color: #00b28f;
 }
+<<<<<<< HEAD
+========
+
+>>>>>>>> main:Frontend/css/style.css
+=======
+>>>>>>> main
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -325,7 +335,10 @@ section {
   color: #f00;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 .features .box-container {
   display: -ms-grid;
   display: grid;
@@ -855,6 +868,7 @@ section {
     font-size: 50%;
   }
 }
+<<<<<<< HEAD
 /* media player */
 .player {
   width: 640px;
@@ -920,3 +934,6 @@ section {
   transition: all 1s linear;
   height: 100%;
 }
+=======
+/*# sourceMappingURL=style.css.map */
+>>>>>>> main

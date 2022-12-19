@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeGoJim</title>
 
-    <script src="js/jquery-3.6.2.min.js"></script>
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 
 </head>
 <body>
@@ -90,26 +89,38 @@
     <div class="content">
         <span>about us</span>
         <h3 class="title">Every day is a chance to become better</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione quia accusamus dicta inventore nobis obcaecati vero odio, id dolorum. Consequatur ex, aperiam deserunt nostrum perferendis illum unde ipsa? Consequatur, distinctio?</p>
+        <p>Share your workout with the gym community now</p>
         <div class="box-container">
             <div class="box">
-                <h3><i class="fas fa-check"></i>body and mind</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, enim.</p>
+                <h3><i class="fas fa-check"></i>Earn points</h3>
+            
             </div>
             <div class="box">
-                <h3><i class="fas fa-check"></i>healthy life</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, enim.</p>
+                <h3><i class="fas fa-check"></i>Lead a healthy life</h3>
+              
             </div>
             <div class="box">
-                <h3><i class="fas fa-check"></i>strategies</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, enim.</p>
+                <h3><i class="fas fa-check"></i>Implement strategies</h3>
+                
             </div>
             <div class="box">
-                <h3><i class="fas fa-check"></i>workout</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, enim.</p>
+                <h3><i class="fas fa-check"></i>Receive monthly rewards</h3>
+              
             </div>
         </div>
-        <a href="#" class="btn">read more</a>
+        
+       
+        <input type="file" id="real-file" hidden="hidden"/>
+        <button type="button" id="custom-button">CHOOSE A FILE</button>
+        
+<button id="upload" class="btn">Upload now</button>
+<div class="text-input">
+    <input type="text" id="input1" placeholder="Describe your recent workout!">
+    <label for="input1">Content</label>
+  </div>
+<div id="title">
+    
+</div>
     </div>
 
 </section>
@@ -369,71 +380,19 @@
 
 <section class="blogs" id="blogs">
 
-    <h1 class="heading"> <span>daily posts</span> </h1>
+    <h1 class="heading"> <span>Daily Posts</span> </h1>
 
     <div class="swiper blogs-slider">
 
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" id="imgs">
 
-            <div class="swiper-slide slide">
-                <div class="image">
-                    <img src="images/blog-1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <div class="link"> <a href="#">by user</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
-                    <h3>fitness is not about being better than someone else</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?</p>
-                    <a href="#" class="btn">read more</a>
-                </div>
-            </div>
+           
             
-            <div class="swiper-slide slide">
-                <div class="image">
-                    <img src="images/blog-2.jpg" alt="">
-                </div>
-                <div class="content">
-                    <div class="link"> <a href="#">by user</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
-                    <h3>fitness is not about being better than someone else</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?</p>
-                    <a href="#" class="btn">read more</a>
-                </div>
-            </div>
+            
+            
 
-            <div class="swiper-slide slide">
-                <div class="image">
-                    <img src="images/blog-3.jpg" alt="">
-                </div>
-                <div class="content">
-                    <div class="link"> <a href="#">by user</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
-                    <h3>fitness is not about being better than someone else</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?</p>
-                    <a href="#" class="btn">read more</a>
-                </div>
-            </div>
-
-            <div class="swiper-slide slide">
-                <div class="image">
-                    <img src="images/blog-4.jpg" alt="">
-                </div>
-                <div class="content">
-                    <div class="link"> <a href="#">by user</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
-                    <h3>fitness is not about being better than someone else</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?</p>
-                    <a href="#" class="btn">read more</a>
-                </div>
-            </div>
-
-            <div class="swiper-slide slide">
-                <div class="image">
-                    <img src="images/blog-5.jpg" alt="">
-                </div>
-                <div class="content">
-                    <div class="link"> <a href="#">by user</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
-                    <h3>fitness is not about being better than someone else</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?</p>
-                    <a href="#" class="btn">read more</a>
-                </div>
-            </div>
+        
+              
 
         </div>
 
@@ -498,10 +457,10 @@
 
 </section>
 
-<div class="credit"> created by <span>serifhan ısıklı</span> | all rights reserved! </div>
+<div class="credit"> created by <span>Marc Shebaby</span> </div>
 
 <!-- footer section ends -->
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->

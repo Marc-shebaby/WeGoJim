@@ -25,4 +25,6 @@ Route::group([
     
 });
 Route::post('/add/{id}', [HomeController::class, 'add_posts']);
-Route::get('/get', [HomeController::class, 'get_posts']);  
+Route::get('/get', [HomeController::class, 'get_posts']); 
+Route::get('/rem/{id}/{img_src}', [HomeController::class, 'get_to_delete_post']); 
+Route::get('/top', [HomeController::class, 'get_top']); 

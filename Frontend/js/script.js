@@ -133,21 +133,76 @@ pages.populate=async()=>{
     const response = await pages.getAPI(link)
 
   if(response){
-       for (let i = 0, l = response.data.posts.length; i < l; i++) {
+   
+    let l = response.data.posts.length
+       for (let i = 0;i < l ; i++) {
+        
+      
             let post = response.data.posts[i];
+        
             let name=post.img_src
             let src="images/"+name
-            
+            if(i==0){
             posts.innerHTML ="<div class=\"swiper-slide slide\">"+"<div class=\"image\">"+"<img src="+src+">"+"</div>"+ "<div class=\"content\">"+
-                    "<div class=\"link\">"+ "<a href=\"#\"> "+post.username+" </a>"+ "<span>|</span>"+ "<a href=\"#\"> "+post.created_at+ " </a>"+ "</div>"+"<h3>"+post.content+"</h3>"+"</div>"+
+                    "<div class=\"link\">"+ "<a href=\"#\"> "+post.username+" </a>"+ "<span>|</span>"+ "<a href=\"#\"> "+post.created_at+ " </a>"+ "</div>"+"<h3>"+post.content+"</h3>"+ "</div>"+
                     "</div>"
+            }
+            else{
+                posts.innerHTML =posts.innerHTML+"<div class=\"swiper-slide slide\">"+"<div class=\"image\">"+"<img src="+src+">"+"</div>"+ "<div class=\"content\">"+
+                "<div class=\"link\">"+ "<a href=\"#\"> "+post.username+" </a>"+ "<span>|</span>"+ "<a href=\"#\"> "+post.created_at+ " </a>"+ "</div>"+"<h3>"+post.content+"</h3>"+ "</div>"+
+                "</div>"
              }
             
-    }
+   }
 }
+}
+
 pages.populate()
 
 
 
+// music player
 
-    
+var player = document.getElementById("player");
+let progress = document.getElementById("progress");
+let playbtn = document.getElementById("playbtn");
+
+var playpause = function () {
+  if (player.paused) {
+    player.play();
+  } else {
+    player.pause();
+  }
+}
+
+playbtn.addEventListener("click", playpause);
+
+player.onplay = function () {
+  playbtn.classList.remove("fa-play");
+  playbtn.classList.add("fa-pause");
+}
+
+player.onpause = function () {
+  playbtn.classList.add("fa-play");
+  playbtn.classList.remove("fa-pause");
+}
+
+player.ontimeupdate = function () {
+  let ct = player.currentTime;
+  current.innerHTML = timeFormat(ct);
+  //progress
+  let duration = player.duration;
+  prog = Math.floor((ct * 100) / duration);
+  progress.style.setProperty("--progress", prog + "%");
+}
+
+function timeFormat(ct) {
+  minutes = Math.floor(ct / 60);
+  seconds = Math.floor(ct % 60);
+
+  if (seconds < 10) {
+    seconds = "0"+seconds;
+  }
+
+  return minutes + ":" + seconds;
+}

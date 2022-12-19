@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeGoJim</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+  />
+
+</head>
+<body>
+    
+<!-- header section starts      -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <span>WeGo</span>Jim </a>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#features">features</a>
+        <a href="#blogs">blogs</a>
+    </nav>
+
+</header>
+
+<!-- header section ends     -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="swiper home-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide" style="background: url(images/home-bg-1.jpg) no-repeat;">
+                <div class="content">
+                    <span>be strong, be fit</span>
+                    <h3>Make yourself stronger than your excuses.</h3>
+                    <a href="#" class="btn">get started</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url(images/home-bg-2.jpg) no-repeat;">
+                <div class="content">
+                    <span>be strong, be fit</span>
+                    <h3>Make yourself stronger than your excuses.</h3>
+                    <a href="#" class="btn">get started</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url(images/home-bg-3.jpg) no-repeat;">
+                <div class="content">
+                    <span>be strong, be fit</span>
+                    <h3>Make yourself stronger than your excuses.</h3>
+                    <a href="#" class="btn">get started</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <div class="image">
+        <img src="images/about-img.jpg" alt="">
+    </div>
+
+    <div class="content">
+        <span>about us</span>
+        <h3 class="title">Every day is a chance to become better</h3>
+        <p>Share your workout with the gym community now</p>
+        <div class="box-container">
+            <div class="box">
+                <h3><i class="fas fa-check"></i>Earn points</h3>
+            
+            </div>
+            <div class="box">
+                <h3><i class="fas fa-check"></i>Lead a healthy life</h3>
+              
+            </div>
+            <div class="box">
+                <h3><i class="fas fa-check"></i>Implement strategies</h3>
+                
+            </div>
+            <div class="box">
+                <h3><i class="fas fa-check"></i>Receive monthly rewards</h3>
+              
+            </div>
+        </div>
+        
+       
+        <input type="file" id="real-file" hidden="hidden"/>
+        <button type="button" id="custom-button">CHOOSE A FILE</button>
+        
+<button id="upload" class="btn">Upload now</button>
+<div class="text-input">
+    <input type="text" id="input1" placeholder="Describe your recent workout!">
+    <label for="input1">Content</label>
+  </div>
+<div id="title">
+    
+</div>
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- features section starts  -->
+
+<section class="features" id="features">
+
+    <h1 class="heading"> <span>Play the community's favorite song</span> </h1>
+
+<div class="box-container"> 
+    <audio id="player" src="Assets/Paapi Muzik - Euphoria (DMCA _ ROYALTY FREE).mp3"></audio>
+    <div class="player">
+      <div class="control">
+        <i class="fas fa-play" id="playbtn"></i>
+      </div>
+      <div class="info">
+        TheFatRat - Electrified
+        <div class="bar">
+          <div id="progress"></div>
+        </div>
+      </div>
+
+      <div id="current">0:00</div>
+    </div>
+
+  </div> 
+
+</section>
+
+<!-- features section ends -->
+
+<!-- pricing section starts  -->
+
+<section class="pricing" id="pricing">
+
+    <div class="information">
+        <span>Challenge</span>
+        <h3>Complete workouts that include on of the following and dont forget to share to gain points</h3>
+     
+        <p> <i class="fas fa-check"></i> cardio exercise </p>
+        <p> <i class="fas fa-check"></i> push exercise </p>
+        <p> <i class="fas fa-check"></i> pull exercise </p>
+        <p> <i class="fas fa-check"></i> leg exercise </p>
+        <h2 style="color:red">Oh no, not loving your recent post? Dont worry delete it with the cost of one point.</h2>
+        <a href="delete.html" class="btn">Delete</a>
+        
+    </div>
+
+   
+
+ 
+
+</section>
+
+
+
+<section class="banner">
+
+    <span>View the top users</span>
+    <h3>get upto 50% discount</h3>
+    <p>Do you have what it takes to reach on top of the leadboards and receive exciting rewards! Prove it now</p>
+    <a href="leadboard.html" class="btn">Leadboards</a>
+
+</section>
+
+
+
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+
+    <h1 class="heading"> <span>Daily Posts</span> </h1>
+
+    <div class="swiper blogs-slider">
+
+        <div class="swiper-wrapper" id="imgs">
+     
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<!-- blogs section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a class="links" href="#home">home</a>
+            <a class="links" href="#about">about</a>
+            <a class="links" href="#features">features</a>
+            <a class="links" href="#pricing">leadboards</a>
+            <a class="links" href="#blogs">blogs</a>
+        </div>
+
+        <div class="box">
+            <h3>opening hours</h3>
+            <p> monday : <i> 7:00am - 10:30pm </i> </p>
+            <p> tuesday : <i> 7:00am - 10:30pm </i> </p>
+            <p> wednesday : <i> 7:00am - 10:30pm </i> </p>
+            <p> friday : <i> 7:00am - 10:30pm </i> </p>
+            <p> saturday : <i> 7:00am - 10:30pm </i> </p>
+            <p> sunday : <i> closed </i> </p>
+        </div>
+
+        <div class="box">
+            <h3>opening hours</h3>
+        
+           
+            <p> <i class="fas fa-map"></i> Lebanon, Jounieh </p>
+           
+        </div>
+
+        <div class="box">
+            <h3>newsletter</h3>
+            
+            
+        </div>
+
+    </div>
+
+</section>
+
+
+   
+
+<!-- footer section ends -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

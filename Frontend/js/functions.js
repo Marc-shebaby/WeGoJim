@@ -23,51 +23,66 @@
 const pages = {}
 
 const base_url = "http://127.0.0.1:8000"
-pages.loaderFunction = () => {
-  
-
+pages.loaderFunction = (page) => {
+  eval("pages.load_"+page+"()")
+}
+pages.load_user=()=>{
+  const form = document.getElementById("myForm")
     const btn = document.getElementById('btn')
     const sbtn = document.getElementById('sbtn')
-    btn.addEventListener('click',  function() {
-      form.addEventListener("submit",async function(event){
-        event.preventDefault()
-    const username = document.getElementById('username').value
-    const password = document.getElementById('password').value
-  
-    
+    btn.addEventListener("click",  async function(e) {
+      e.preventDefault()
+   
+    const username = document.getElementById('username')
+    const password = document.getElementById('password')
+    const formData = new FormData();
+    const user=username.value
+    const pass=password.value
     const url = base_url + "/api/auth/login"
-    const resp = await pages.postAPI(url)
+    formData.append("username", user)
+   
+    formData.append("password", pass)
+    console.log([...formData])
+    const resp = await pages.postAPI(url,formData)
     const message = document.getElementById('title')
-    if(resp.data[0] == null) {
-      message.innerHTML = "<i><h6 style = \"color: red;\"> Incorrect Username or Password</h6></i>"
-    } else {
-      location.assign('./index.html')
+    if (resp){
+      window.localStorage.setItem('id', resp.data.user.id)
+      window.location.href = "index.html";
     }
-  })
-}) 
-sbtn.addEventListener("click", function(){
-  form.addEventListener("submit",async function(event){
-    event.preventDefault()
-const username = document.getElementById('new_username')
-  const password = document.getElementById('new_password')
-  const email = document.getElementById('new_email')
+    else{
+      message.innerHTML = "<i><h6 style = \"color: red;\"> Incorrect Username or Password</h6></i>"
+    }
 
   
   
+}  )
+sbtn.addEventListener("click",  function(){
+ form.addEventListener("submit",async function(event){
+   event.preventDefault()
+const username = document.getElementById('new_username')
+
+  const password = document.getElementById('new_password')
+  const email = document.getElementById('email')
+  const formData = new FormData();
+  const user=username.value
+  const pass=password.value
+  const e=email.value
 
   const url = base_url + "/api/auth/register"
-  const formData = new FormData();
-  formData.append('username', username);
-  formData.append('email', email);
-  formData.append('password', password);
+  
+  formData.append("username", user)
+  formData.append("email", e)
+  formData.append("password", pass)
+  console.log([...formData])
   const resp = await pages.postAPI(url, formData)
+  location.assign('./index.html')
 
  
 
-})
-})
+} )
+} )
 }
-  pages.postAPI = async(url, api_data, api_token = null) => {  
+  pages.postAPI = async(api_url, api_data, api_token = null) => {  
     try {
         return await axios.post(
             api_url, 
@@ -86,7 +101,4 @@ const username = document.getElementById('new_username')
 
 
 
-  const form = document.getElementById("myForm")
-
-  
   

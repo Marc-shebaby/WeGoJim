@@ -11,8 +11,8 @@ window.onscroll = () =>{
     navbar.classList.remove('active');
 };
 
-// used var because variable is redeclared
-var swiper = new Swiper(".home-slider", {
+
+let swiper = new Swiper(".home-slider", {
     spaceBetween: 20,
     effect: "fade",
     grabCursor: true,
@@ -22,27 +22,15 @@ var swiper = new Swiper(".home-slider", {
       el: ".swiper-pagination",
       clickable: true,
     },
-});
-
-var swiper = new Swiper(".review-slider", {
-    spaceBetween: 20,
-    grabCursor: true,
-    loop:true,
     autoplay: {
-        delay: 7500,
+        delay: 2500,
         disableOnInteraction: false,
     },
-    breakpoints:{
-        0:{
-            slidesPerView:1,
-        },
-        600:{
-            slidesPerView:2,
-        },
-    },
 });
 
-var swiper = new Swiper(".blogs-slider", {
+
+
+swiper = new Swiper(".blogs-slider", {
     spaceBetween: 20,
     grabCursor: true,
     loop:true,
@@ -76,8 +64,8 @@ let arr=[]
 
 const customBtn = document.getElementById("custom-button")
 customBtn.addEventListener("click",  function() {
-    img.click();
-});
+    img.click()
+})
 const up_btn=document.getElementById("upload");
 up_btn.addEventListener("click",async function(){
     const content=document.getElementById("input1")
@@ -206,3 +194,9 @@ function timeFormat(ct) {
 
   return minutes + ":" + seconds;
 }
+// redirect logout
+const direct=document.getElementById("redirect")
+direct.addEventListener("click",function() {
+  localStorage.clear();
+  location.assign('./WeGoJim.html')
+})

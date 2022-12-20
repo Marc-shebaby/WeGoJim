@@ -22,7 +22,11 @@ window.onscroll = () =>{
       el: ".swiper-pagination",
       clickable: true,
     },
-    delay: 2500,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+  },
+    
 });
 
 

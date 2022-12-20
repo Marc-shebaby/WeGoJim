@@ -191,8 +191,19 @@ function timeFormat(ct) {
 
   return minutes + ":" + seconds;
 }
-const direct=document.getElementById("redirect")
+const direct=document.getElementById("redirect-1")
+const direct2=document.getElementById("redirect-2")
+const direct3=document.getElementById("redirect-3")
+
 direct.addEventListener("click",function() {
   localStorage.clear();
   location.assign('./WeGoJim.html')
 })
+direct2.addEventListener("click",function() {
+    localStorage.clear();
+    location.assign('./WeGoJim.html')
+  })
+  direct3.addEventListener("click",function() {
+    localStorage.clear();
+    location.assign('./WeGoJim.html')
+  })

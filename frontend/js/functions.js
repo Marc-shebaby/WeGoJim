@@ -42,7 +42,7 @@ pages.load_user=()=>{
     formData.append("username", user)
    
     formData.append("password", pass)
-    console.log([...formData])
+    
     const resp = await pages.postAPI(url,formData)
     const message = document.getElementById('title')
     if (resp){
@@ -73,10 +73,12 @@ const username = document.getElementById('new_username')
   formData.append("username", user)
   formData.append("email", e)
   formData.append("password", pass)
-  console.log([...formData])
+  
   const resp = await pages.postAPI(url, formData)
+  if(resp){
+  window.localStorage.setItem('id', resp.data.user.id)
   location.assign('./index.html')
-
+  }
  
 
 } )

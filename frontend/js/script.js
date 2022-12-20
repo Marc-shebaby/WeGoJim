@@ -12,7 +12,7 @@ window.onscroll = () =>{
 };
 
 
-let swiper = new Swiper(".home-slider", {
+ let swiper = new Swiper(".home-slider", {
     spaceBetween: 20,
     effect: "fade",
     grabCursor: true,
@@ -22,15 +22,12 @@ let swiper = new Swiper(".home-slider", {
       el: ".swiper-pagination",
       clickable: true,
     },
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
+    delay: 2500,
 });
 
 
 
-swiper = new Swiper(".blogs-slider", {
+ swiper = new Swiper(".blogs-slider", {
     spaceBetween: 20,
     grabCursor: true,
     loop:true,
@@ -64,8 +61,8 @@ let arr=[]
 
 const customBtn = document.getElementById("custom-button")
 customBtn.addEventListener("click",  function() {
-    img.click()
-})
+    img.click();
+});
 const up_btn=document.getElementById("upload");
 up_btn.addEventListener("click",async function(){
     const content=document.getElementById("input1")
@@ -194,9 +191,19 @@ function timeFormat(ct) {
 
   return minutes + ":" + seconds;
 }
-// redirect logout
-const direct=document.getElementById("redirect")
+const direct=document.getElementById("redirect-1")
+const direct2=document.getElementById("redirect-2")
+const direct3=document.getElementById("redirect-3")
+
 direct.addEventListener("click",function() {
   localStorage.clear();
   location.assign('./WeGoJim.html')
 })
+direct2.addEventListener("click",function() {
+    localStorage.clear();
+    location.assign('./WeGoJim.html')
+  })
+  direct3.addEventListener("click",function() {
+    localStorage.clear();
+    location.assign('./WeGoJim.html')
+  })
